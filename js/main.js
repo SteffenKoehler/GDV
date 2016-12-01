@@ -168,8 +168,8 @@ var rentApp = (function(window, document, $, L, undefined) {
     topoLayer.eachLayer(function(layer) {
 
       var properties = layer.feature.properties,
-        rent = properties.randomRent * config.roomQms[currentRoomCount],
-        percentage = ((100 / currentSalary) * rent),
+      //  rent = properties.randomRent * config.roomQms[currentRoomCount],
+        percentage = Math.random() * 100,
         color = getColorByPercentage(percentage);
 
       layer.setStyle({
