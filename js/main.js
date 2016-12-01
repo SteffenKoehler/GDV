@@ -46,11 +46,11 @@ var rentApp = (function(window, document, $, L, undefined) {
       zoomControl: false,
       maxBounds: config.bounds,
       minZoom: 11,
-      maxZoom: 12,
+      maxZoom: 12
     });
 
-    loadAjax({url : 'data/labels.json', callback : addLabels});
-    //loadAjax({url : 'data/berlin-zipcodes-data.topojson', callback : addTopoJson });
+    //loadAjax({url : 'data/labels.json', callback : addLabels});
+    loadAjax({url : 'data/berlin-zipcodes-data.topojson', callback : addTopoJson });
     //loadAjax({url : 'data/wohnheime.json', callback : addWohnheimMarker });
     loadAjax({url : 'data/hochschule.json', callback : addHochschuleMarker });
   }
@@ -397,7 +397,7 @@ var rentApp = (function(window, document, $, L, undefined) {
   }
 
   function onHochschuleClick() {
-    alert("Test");
+    //alert("Test");
   }
 
   /******************************** 
