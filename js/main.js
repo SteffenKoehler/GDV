@@ -45,13 +45,11 @@ var rentApp = (function(window, document, $, L, undefined) {
       zoom: getZoomByWindowSize(),
       zoomControl: false,
       maxBounds: config.bounds,
-      minZoom: 11,
-      maxZoom: 12
     });
 
-    var osmUrl='http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png';
-    var osmAttrib='Map data © <a href="http://openstreetmap.org">OpenStreetMap</a> contributors';
-    var osm = new L.TileLayer(osmUrl, {minZoom: 8, maxZoom: 12, attribution: osmAttrib});
+    var osmUrl='http://{s}.tile.openstreetmap.de/tiles/osmde/{z}/{x}/{y}.png';
+    var osmAttrib='&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>';
+    var osm = new L.TileLayer(osmUrl, {minZoom: 1, maxZoom: 20, attribution: osmAttrib});
     map.addLayer(osm);
 
       //loadAjax({url : 'data/labels.json', callback : addLabels});
