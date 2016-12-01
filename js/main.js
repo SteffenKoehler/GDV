@@ -50,7 +50,7 @@ var rentApp = (function(window, document, $, L, undefined) {
     });
 
     loadAjax({url : 'data/labels.json', callback : addLabels});
-    loadAjax({url : 'data/berlin-zipcodes-data.topojson', callback : addTopoJson });
+    //loadAjax({url : 'data/berlin-zipcodes-data.topojson', callback : addTopoJson });
     //loadAjax({url : 'data/wohnheime.json', callback : addWohnheimMarker });
     loadAjax({url : 'data/hochschule.json', callback : addHochschuleMarker });
   }
@@ -373,26 +373,32 @@ var rentApp = (function(window, document, $, L, undefined) {
 
   }
 
-    function addHochschuleMarker(marker) {
-        marker.forEach(function(label, i) {
-            if(!label){
-                return;
-            }
-            var wohnheim = label.Hochschule;
-            var strasse = label.Straße;
-            L.marker([label.Latitude, label.Longitude])
-                .bindPopup("<b>" + wohnheim +"</b><br>" + strasse)
-                .on({
-                  'click': onHochschuleClick
-                })
-                .addTo(map);
-        });
 
-    }
 
-    function onHochschuleClick() {
-        alert("Test");
-    }
+
+  function addHochschuleMarker(marker) {
+      marker.forEach(function(hochschule, i) {
+          if(!hochschule){
+              return;
+          }
+          var wohnheim = hochschule.Hochschule;
+          var strasse = hochschule.Straße;
+          var marker = L.marker([hochschule.Latitude, hochschule.Longitude])
+              .bindPopup("<b>" + wohnheim +"</b><br>" + strasse)
+              .on({
+                'click': onHochschuleClick
+              });
+
+          marker.addTo(map);
+
+          hochschulMarker.push(marker);
+      });
+
+  }
+
+  function onHochschuleClick() {
+    alert("Test");
+  }
 
   /******************************** 
   //  
@@ -416,5 +422,5 @@ var rentApp = (function(window, document, $, L, undefined) {
 
 }(window, document, jQuery, L));
 
-
+var hochschulMarker = [];
 rentApp.init()
