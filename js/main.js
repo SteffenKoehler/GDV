@@ -133,10 +133,11 @@ var rentApp = (function(window, document, $, L, undefined) {
   // set polygon style and update tooltip if user enters a polygon
   function enterPolygon(evt) {
     var layer = evt.target,
-      rentPrice = layer.feature.properties.randomRent;
+        name = layer.feature.properties.name;
+
 
     // only update layer and tooltip if we have valid data
-    if (rentPrice > 0) {
+    if (name ) {
       updateTooltip({ layer:layer, evt : evt })
 
       layer.setStyle({
@@ -194,10 +195,10 @@ var rentApp = (function(window, document, $, L, undefined) {
         properties = feature.properties;
 
       // set tooltip content
-      ui.$tooltipheadline.html('<strong>' + feature.id + ' </strong>' + properties.name);
-      ui.$tooltipqm.text(qms);
-      ui.$tooltipbezirk.text(properties.district);
-      ui.$tooltipRentPrice.text(properties.randomRent);
+      ui.$tooltipheadline.html('<strong>' + properties.name + ' </strong>');
+      //ui.$tooltipqm.text(qms);
+      ui.$tooltipbezirk.text(properties.note);
+      //ui.$tooltipRentPrice.text(properties.randomRent);
 
       ui.$tooltip.show();
       ui.$tooltip.css('border-left', ('4px solid ' + params.layer.options.fillColor));
