@@ -177,7 +177,7 @@ var rentApp = (function(window, document, $, L, undefined) {
       });
     });
 
-    setSalaryLabelPosition();
+        //setSalaryLabelPosition();
   }
 
 
@@ -197,7 +197,7 @@ var rentApp = (function(window, document, $, L, undefined) {
       // set tooltip content
       ui.$tooltipheadline.html('<strong>' + properties.name + ' </strong>');
       //ui.$tooltipqm.text(qms);
-      ui.$tooltipbezirk.text(properties.note);
+      ui.$tooltipbezirk.text(properties.bezirk);
       //ui.$tooltipRentPrice.text(properties.randomRent);
 
       ui.$tooltip.show();
@@ -234,23 +234,23 @@ var rentApp = (function(window, document, $, L, undefined) {
     }).change(function() {
       updateHash();
       // set salary label to the correct position if the user clicks on the bar
-      setTimeout(setSalaryLabelPosition, 250);
+          //setTimeout(setSalaryLabelPosition, 250);
     });
   } 
 
   // sets the salary label next to the current slider position
-  function setSalaryLabelPosition() {
+        /*function setSalaryLabelPosition() {
 
-    if (!featureSupport.isSmartphone) {
-      var handleOffset = $('.noUi-handle').offset(),
-        sidebarOffset = $('.sidebar').offset();
+          if (!featureSupport.isSmartphone) {
+            var handleOffset = $('.noUi-handle').offset(),
+              sidebarOffset = $('.sidebar').offset();
 
-      $('.slider-output').css({
-        top: (handleOffset.top - sidebarOffset.top) + 'px'
-      });
-    }
-    $('.slider-output').show();
-  }
+            $('.slider-output').css({
+              top: (handleOffset.top - sidebarOffset.top) + 'px'
+            });
+          }
+          $('.slider-output').show();
+        }*/
 
   // activates the clicked room button and redraws the map
   function handleRoomBtn() {
@@ -402,6 +402,7 @@ var rentApp = (function(window, document, $, L, undefined) {
 
   function onHochschuleClick(e) {
       map.setView(e.latlng, 15);
+      console.log("HochschulMarker", hochschulMarker);
     //alert("Test");
   }
 
