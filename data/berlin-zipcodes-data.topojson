@@ -3747,7 +3747,7 @@
         "is_in": "München,Bayern,Bundesrepublik Deutschland,Europe",
         "name": "Pasing-Obermenzing",
         "bezirk": "Stadtbezirk 21",
-        "bezirkId": "21"
+        "bezirkId": "21",
         "note": "München, Stadtbezirk 21, Bezirksteil 4",
         "type": "boundary"
       },
@@ -4717,7 +4717,7 @@
         "is_in": "München,Bayern,Bundesrepublik Deutschland,Europe",
         "name": "Aubing-Lochhausen-Langwied",
         "bezirk": "Stadtbezirk 22",
-        "bezirkId": "22"
+        "bezirkId": "22",
         "note": "München, Stadtbezirk 22, 2 Bezirksteile",
         "type": "boundary"
       },
@@ -14969,7 +14969,7 @@
         "boundary": "administrative",
         "is_in": "München,Bayern,Bundesrepublik Deutschland,Europe",
         "name": "Au-Haidhausen",
-        "bezirk", "Stadtbezirk 5",
+        "bezirk": "Stadtbezirk 5",
         "bezirkId": "5",
         "note": "München, Stadtbezirk 5, 6 Bezirksteile",
         "type": "boundary"
