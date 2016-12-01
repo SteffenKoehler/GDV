@@ -400,7 +400,8 @@ var rentApp = (function(window, document, $, L, undefined) {
 
   }
 
-  function onHochschuleClick() {
+  function onHochschuleClick(e) {
+      map.setView(e.latlng, 15);
     //alert("Test");
   }
 
