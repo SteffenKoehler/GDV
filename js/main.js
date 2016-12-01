@@ -49,7 +49,12 @@ var rentApp = (function(window, document, $, L, undefined) {
       maxZoom: 12
     });
 
-    //loadAjax({url : 'data/labels.json', callback : addLabels});
+    var osmUrl='http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png';
+    var osmAttrib='Map data © <a href="http://openstreetmap.org">OpenStreetMap</a> contributors';
+    var osm = new L.TileLayer(osmUrl, {minZoom: 8, maxZoom: 12, attribution: osmAttrib});
+    map.addLayer(osm);
+
+      //loadAjax({url : 'data/labels.json', callback : addLabels});
     loadAjax({url : 'data/berlin-zipcodes-data.topojson', callback : addTopoJson });
     //loadAjax({url : 'data/wohnheime.json', callback : addWohnheimMarker });
     loadAjax({url : 'data/hochschule.json', callback : addHochschuleMarker });
