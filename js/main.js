@@ -401,6 +401,18 @@ var rentApp = (function(window, document, $, L, undefined) {
   }
 
   function onHochschuleClick(e) {
+    //Entfernen aller Marker die nicht e entsprechen
+    for(var i=0;i<hochschulMarker.length;i++){
+      console.log("X= " + typeof hochschulMarker[i].getLatLng());
+      console.log("E= " + typeof e.latlng);
+      console.log("X= " + hochschulMarker[i].getLatLng());
+      console.log("E= " + e.latlng);
+
+      //Vergleich funktioniert noch nicht
+      if(hochschulMarker[i] != e){
+        map.removeLayer(hochschulMarker[i]);
+      }
+    }
       map.setView(e.latlng, 15);
       console.log("HochschulMarker", hochschulMarker);
     //alert("Test");
