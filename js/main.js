@@ -400,22 +400,14 @@ var rentApp = (function(window, document, $, L, undefined) {
 
   }
 
-  function onHochschuleClick(e) {
-    //Entfernen aller Marker die nicht e entsprechen
+  function onHochschuleClick(markerClicked) {
+    //Entfernen aller Marker die nicht dem geklilckten marker entsprechen
     for(var i=0;i<hochschulMarker.length;i++){
-      console.log("X= " + typeof hochschulMarker[i].getLatLng());
-      console.log("E= " + typeof e.latlng);
-      console.log("X= " + hochschulMarker[i].getLatLng());
-      console.log("E= " + e.latlng);
-
-      //Vergleich funktioniert noch nicht
-      if(hochschulMarker[i] != e){
+      if(hochschulMarker[i] != markerClicked.target){
         map.removeLayer(hochschulMarker[i]);
       }
     }
-      map.setView(e.latlng, 15);
-      console.log("HochschulMarker", hochschulMarker);
-    //alert("Test");
+      map.setView(markerClicked.latlng, 15);
   }
 
   /******************************** 
