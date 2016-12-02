@@ -285,7 +285,7 @@ var rentApp = (function(window, document, $, L, undefined) {
   }
 
   function bindEvents() {
-    $('.room-btn').on('click', handleRoomBtn);
+    $('.room-btn').on('click', resetSelectedMarkers);
     $('.icon-info').on('click', handleInfoBtn);
     $('.info').find('.close').on('click', handleInfoBtn);
     $(window).on('resize', resize);
@@ -408,6 +408,12 @@ var rentApp = (function(window, document, $, L, undefined) {
       }
     }
       map.setView(markerClicked.latlng, 15);
+  }
+
+
+  function resetSelectedMarkers() {
+      map.remove();
+      initMap();
   }
 
   /******************************** 
