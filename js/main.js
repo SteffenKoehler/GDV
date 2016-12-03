@@ -57,7 +57,6 @@ var rentApp = (function(window, document, $, L, undefined) {
 
       //loadAjax({url : 'data/labels.json', callback : addLabels});
     loadAjax({url : 'data/berlin-zipcodes-data.topojson', callback : addTopoJson });
-    //loadAjax({url : 'data/wohnheime.json', callback : addWohnheimMarker });
     loadAjax({url : 'data/hochschule.json', callback : addHochschuleMarker });
   }
 
@@ -369,13 +368,31 @@ var rentApp = (function(window, document, $, L, undefined) {
   }
 
   function addWohnheimMarker(marker) {
-      marker.forEach(function(label, i) {
-        if(!label){
-            return;
+
+    //clear wohnheim marker to avoid continuous map adding
+      if(wohnheimMarker.length > 0){
+        for (var idx in wohnheimMarker){
+          map.removeLayer(wohnheimMarker[idx]);
         }
+      }
+
+      marker.forEach(function(label, i) {
+
+        var wonheimIcon = L.icon({
+            iconUrl: 'img/wohnheime.png',
+
+            iconSize:     [50, 50], // size of the icon
+            iconAnchor:   [22, 94], // point of the icon which will correspond to marker's location
+            popupAnchor:  [2, -90] // point from which the popup should open relative to the iconAnchor
+        });
+
+
         var wohnheim = label.Wohnheim;
         var strasse = label.Straße;
-        L.marker([label.Latitude, label.Longitude]).bindPopup("<b>" + wohnheim +"</b><br>" + strasse).addTo(map);
+        var marker = L.marker([label.Latitude, label.Longitude], {icon: wonheimIcon}).bindPopup("<b>" + wohnheim +"</b><br>" + strasse);
+        marker.addTo(map);
+
+        wohnheimMarker.push(marker);
       });
 
   }
@@ -411,6 +428,7 @@ var rentApp = (function(window, document, $, L, undefined) {
       }
     }
       map.setView(markerClicked.latlng, 15);
+      loadAjax({url : 'data/wohnheime.json', callback : addWohnheimMarker });
   }
 
 
@@ -442,4 +460,5 @@ var rentApp = (function(window, document, $, L, undefined) {
 }(window, document, jQuery, L));
 
 var hochschulMarker = [];
-rentApp.init()
+var wohnheimMarker = [];
+rentApp.init();
