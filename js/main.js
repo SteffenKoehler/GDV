@@ -368,7 +368,6 @@ var rentApp = (function(window, document, $, L, undefined) {
   }
 
   function addWohnheimMarker(marker) {
-
     //clear wohnheim marker to avoid continuous map adding
       if(wohnheimMarker.length > 0){
         for (var idx in wohnheimMarker){
@@ -376,36 +375,58 @@ var rentApp = (function(window, document, $, L, undefined) {
         }
       }
 
+      marker.forEach(function(label, i) {
 
-      setTimeout(function () {
-          marker.forEach(function(label, i) {
+          var wonheimIcon = L.icon({
+              iconUrl: 'img/wohnheime.png',
 
-              var wonheimIcon = L.icon({
-                  iconUrl: 'img/wohnheime.png',
-
-                  iconSize:     [50, 50], // size of the icon
-                  iconAnchor:   [22, 94], // point of the icon which will correspond to marker's location
-                  popupAnchor:  [2, -90] // point from which the popup should open relative to the iconAnchor
-              });
+              iconSize:     [50, 50], // size of the icon
+              iconAnchor:   [22, 94], // point of the icon which will correspond to marker's location
+              popupAnchor:  [2, -90] // point from which the popup should open relative to the iconAnchor
+          });
 
 
-              var wohnheim = label.Wohnheim;
-              var strasse = label.Straße;
-              var marker = L.marker([label.Latitude, label.Longitude],
-                      {icon: wonheimIcon,
-                      bounceOnAdd: true,
-                      bounceOnAddOptions: {duration: 500, height: 100}})
-                  .bindPopup("<b>" + wohnheim +"</b><br>" + strasse);
-              marker.addTo(map);
+          var wohnheim = label.Wohnheim;
+          var strasse = label.Straße;
+          var marker = L.marker([label.Latitude, label.Longitude],
+              {icon: wonheimIcon,
+                  bounceOnAdd: true,
+                  bounceOnAddOptions: {duration: 500, height: 100}})
+              .bindPopup("<b>" + wohnheim +"</b><br>" + strasse);
+          marker.addTo(map);
 
-              wohnheimMarker.push(marker);
+          wohnheimMarker.push(marker);
       })
-
-
-
-      }, 300);
-
   }
+
+    function addParkMarker(marker) {
+        //clear wohnheim marker to avoid continuous map adding
+        if(parkMarker.length > 0){
+            for (var idx in parkMarker){
+                map.removeLayer(parkMarker[idx]);
+            }
+        }
+
+        marker.forEach(function(label, i) {
+            var parkIcon = L.icon({
+                iconUrl: 'img/parksMarker.png',
+
+                iconSize:     [25, 40], // size of the icon
+                iconAnchor:   [22, 94], // point of the icon which will correspond to marker's location
+                popupAnchor:  [-9, -90] // point from which the popup should open relative to the iconAnchor
+            });
+
+            var parkName = label.Name;
+            var marker = L.marker([label.Latitude, label.Longitude],
+                {icon: parkIcon,
+                    bounceOnAdd: true,
+                    bounceOnAddOptions: {duration: 500, height: 100}})
+                .bindPopup("<b>" + parkName +"</b>");
+            marker.addTo(map);
+
+            parkMarker.push(marker);
+        })
+    }
 
 
 
@@ -438,7 +459,14 @@ var rentApp = (function(window, document, $, L, undefined) {
       }
     }
       map.setView(markerClicked.latlng, 15);
-      loadAjax({url : 'data/wohnheime.json', callback : addWohnheimMarker });
+      setTimeout(function () {
+          loadAjax({url : 'data/wohnheime.json', callback : addWohnheimMarker });
+      }, 300);
+
+      setTimeout(function () {
+          loadAjax({url : 'data/parks.json', callback : addParkMarker });
+      }, 300);
+
   }
 
 
@@ -471,4 +499,5 @@ var rentApp = (function(window, document, $, L, undefined) {
 
 var hochschulMarker = [];
 var wohnheimMarker = [];
+var parkMarker = [];
 rentApp.init();
