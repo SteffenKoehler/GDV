@@ -376,24 +376,34 @@ var rentApp = (function(window, document, $, L, undefined) {
         }
       }
 
-      marker.forEach(function(label, i) {
 
-        var wonheimIcon = L.icon({
-            iconUrl: 'img/wohnheime.png',
+      setTimeout(function () {
+          marker.forEach(function(label, i) {
 
-            iconSize:     [50, 50], // size of the icon
-            iconAnchor:   [22, 94], // point of the icon which will correspond to marker's location
-            popupAnchor:  [2, -90] // point from which the popup should open relative to the iconAnchor
-        });
+              var wonheimIcon = L.icon({
+                  iconUrl: 'img/wohnheime.png',
+
+                  iconSize:     [50, 50], // size of the icon
+                  iconAnchor:   [22, 94], // point of the icon which will correspond to marker's location
+                  popupAnchor:  [2, -90] // point from which the popup should open relative to the iconAnchor
+              });
 
 
-        var wohnheim = label.Wohnheim;
-        var strasse = label.Straße;
-        var marker = L.marker([label.Latitude, label.Longitude], {icon: wonheimIcon}).bindPopup("<b>" + wohnheim +"</b><br>" + strasse);
-        marker.addTo(map);
+              var wohnheim = label.Wohnheim;
+              var strasse = label.Straße;
+              var marker = L.marker([label.Latitude, label.Longitude],
+                      {icon: wonheimIcon,
+                      bounceOnAdd: true,
+                      bounceOnAddOptions: {duration: 500, height: 100}})
+                  .bindPopup("<b>" + wohnheim +"</b><br>" + strasse);
+              marker.addTo(map);
 
-        wohnheimMarker.push(marker);
-      });
+              wohnheimMarker.push(marker);
+      })
+
+
+
+      }, 300);
 
   }
 
