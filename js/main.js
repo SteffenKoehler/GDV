@@ -30,6 +30,8 @@ var rentApp = (function (window, document, $, L, undefined) {
             $checkboxHochschulen: $('#checkHochschulen'),
             $checkboxWohnheime: $('#checkWohnheime'),
             $checkboxParks: $('#checkParks'),
+            $checkboxHaltestellen: $('#checkHaltestellen'),
+
         },
         hashValues = getHashValues(),
         currentRoomCount = hashValues.rooms || config.startRoom,
@@ -446,17 +448,15 @@ var rentApp = (function (window, document, $, L, undefined) {
             }
         }
 
+        var wonheimIcon = L.icon({
+            iconUrl: 'img/wohnheime.png',
+
+            iconSize: [50, 50], // size of the icon
+            iconAnchor: [22, 94], // point of the icon which will correspond to marker's location
+            popupAnchor: [2, -90] // point from which the popup should open relative to the iconAnchor
+        });
+
         marker.forEach(function (label, i) {
-
-            var wonheimIcon = L.icon({
-                iconUrl: 'img/wohnheime.png',
-
-                iconSize: [50, 50], // size of the icon
-                iconAnchor: [22, 94], // point of the icon which will correspond to marker's location
-                popupAnchor: [2, -90] // point from which the popup should open relative to the iconAnchor
-            });
-
-
             var wohnheim = label.Wohnheim;
             var strasse = label.Straße;
             var marker = L.marker([label.Latitude, label.Longitude],
@@ -487,22 +487,22 @@ var rentApp = (function (window, document, $, L, undefined) {
     });
 
     function addParkMarker(marker) {
-        //clear wohnheim marker to avoid continuous map adding
+        //clear park marker to avoid continuous map adding
         if (parkMarker.length > 0) {
             for (var idx in parkMarker) {
                 map.removeLayer(parkMarker[idx]);
             }
         }
 
+        var parkIcon = L.icon({
+            iconUrl: 'img/parksMarker.png',
+
+            iconSize: [25, 40], // size of the icon
+            iconAnchor: [22, 94], // point of the icon which will correspond to marker's location
+            popupAnchor: [-9, -90] // point from which the popup should open relative to the iconAnchor
+        });
+
         marker.forEach(function (label, i) {
-            var parkIcon = L.icon({
-                iconUrl: 'img/parksMarker.png',
-
-                iconSize: [25, 40], // size of the icon
-                iconAnchor: [22, 94], // point of the icon which will correspond to marker's location
-                popupAnchor: [-9, -90] // point from which the popup should open relative to the iconAnchor
-            });
-
             var parkName = label.Name;
             var marker = L.marker([label.Latitude, label.Longitude],
                 {
@@ -514,6 +514,51 @@ var rentApp = (function (window, document, $, L, undefined) {
             marker.addTo(map);
 
             parkMarker.push(marker);
+        })
+    }
+
+
+    /********************************
+     //
+     //    haltestellen marker logic
+     //
+     *********************************/
+
+    ui.$checkboxHaltestellen.change(function () {
+        if(this.checked){
+            loadAjax({url: 'data/haltestellen.topojson', callback: addHaltestellenMarker});
+        } else {
+            removeSetOfMarkers(haltestellenMarker);
+        }
+    });
+
+    function addHaltestellenMarker(marker) {
+        //clear haltestellen marker to avoid continuous map adding
+        if (haltestellenMarker.length > 0) {
+            for (var idx in haltestellenMarker) {
+                map.removeLayer(haltestellenMarker[idx]);
+            }
+        }
+
+        var haltestelleIcon = L.icon({
+            iconUrl: 'img/haltestellenMarker.png',
+            iconSize: [35, 35], // size of the icon
+            iconAnchor: [22, 94], // point of the icon which will correspond to marker's location
+            popupAnchor: [-9, -90] // point from which the popup should open relative to the iconAnchor
+        });
+
+        marker.features.forEach(function (haltestelle) {
+            var haltestelleName = haltestelle.properties.description;
+            var marker = L.marker([haltestelle.geometry.coordinates[1], haltestelle.geometry.coordinates[0]],
+                {
+                    icon: haltestelleIcon,
+                    bounceOnAdd: true,
+                    bounceOnAddOptions: {duration: 500, height: 100}
+                })
+                .bindPopup("<b>" + haltestelleName + "</b>");
+            marker.addTo(map);
+
+            haltestellenMarker.push(marker);
         })
     }
 
@@ -560,4 +605,5 @@ var rentApp = (function (window, document, $, L, undefined) {
 var hochschulMarker = [];
 var wohnheimMarker = [];
 var parkMarker = [];
+var haltestellenMarker = [];
 rentApp.init();
