@@ -45,24 +45,34 @@
 
 		<div id="map"></div>
 
-        <!--<div class="sidebar box">
+        <div class="sidebar box" id="sidebar">
 			<div class="subline">
-
-                Ihr Haushaltseinkommen<br /><span class="light hide-on-mobile">monatlich netto verfügbar</span>
+                Was soll angezeigt werden?
             </div>
-			<div class="slider-output "><span></span> Euro</div>
-			<div id="slider">
+
+            <!--<div class="checkbox" id="checkHochschulen">
+                <input type="checkbox" name="hochschulen" value="hochschulen" checked> <span class="light">Universitäten / Hochschulen</span>
+            </div>-->
+
+            <div class="checkbox">
+                <input id="checkWohnheime" type="checkbox" name="wohnheime" value="wohnheime"> <span class="light">Wohnheime</span>
+            </div>
+
+            <div class="checkbox">
+                <input id="checkParks" type="checkbox" name="parks" value="parks" > <span class="light">Parks</span>
+            </div>
+
+			<!--<div id="slider">
 				<div class="slider-values max hide-on-mobile">- 5.000 Euro</div>
 				<div class="slider-values min hide-on-mobile">- 0 Euro</div>
-			</div> 
-		</div>-->
+			</div> -->
+		</div>
 
         <div class="room-chooser box hide-on-mobile">
             <div class="btn-wrapper group">
                 <div class="room-btn btn">Reset selection</div>
             </div>
         </div>
-
 
 		<!--<div class="legend">
     		<div class="subline">

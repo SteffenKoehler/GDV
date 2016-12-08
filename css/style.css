@@ -244,13 +244,19 @@ li.nodata {
 *****************/
 
 .sidebar {
-    top: 20px;
-    left: 25px;
+    position: absolute;
+    top: 305px;
+    right: 25px;
     min-width: 230px;
     -webkit-user-select: none;
     -moz-user-select: none;
     user-select: none;
 }
+
+.sidebar .checkbox{
+    margin-bottom: 5px;
+}
+
 .noUi-handle {
     background: #5f6374;
     box-shadow: none;
@@ -297,6 +303,7 @@ li.nodata {
 }
 .subline {
     font-size: 16px;
+    margin-bottom: 10px;
 }
 .room-chooser {
     position: absolute;
