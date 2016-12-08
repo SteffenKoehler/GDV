@@ -1,32 +1,55 @@
 <!DOCTYPE html>
-
 <html>
-
 <head>
-
-  <style type="text/css">
-
-    html, body { height: 100%; margin: 0; padding: 0; }
-
-    #map { height: 100%; }
+  <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+  <meta charset="utf-8">
+  <title>Directions service</title>
+  <style>
+    html, body {
+      height: 100%;
+      margin: 0;
+      padding: 0;
+    }
+    #map {
+      height: 100%;
+    }
+    #floating-panel {
+      position: absolute;
+      top: 10px;
+      left: 25%;
+      z-index: 5;
+      background-color: #fff;
+      padding: 5px;
+      border: 1px solid #999;
+      text-align: center;
+      font-family: 'Roboto','sans-serif';
+      line-height: 30px;
+      padding-left: 10px;
+    }
 
   </style>
-
 </head>
 
 <body>
 
-<div id="map"></div>
+<div id="Time">
+  <div id="transit"></div>
+  <div id="bicycling"></div>
+</div>
+
+
+<script src="js/gmap.js"></script>
+<script src="bower_components/jquery/dist/jquery.min.js"></script>
 
 <script type="text/javascript">
   initMap();
 </script>
 
 
+
+</body>
 <script async defer
         src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC7CXLSOrggUPcSxztTkrkzaVJo_0cMQbM&callback=initMap">
 </script>
-</body>
 
-<script src="js/gmap.js"></script>
 </html>
