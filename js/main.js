@@ -412,7 +412,7 @@ var rentApp = (function (window, document, $, L, undefined) {
                 map.removeLayer(hochschulMarker[i]);
             }
         }
-        map.setView(markerClicked.latlng, 15);
+        map.setView(markerClicked.latlng, 14);
 
         ui.$checkboxWohnheime.prop('checked', true);
 
