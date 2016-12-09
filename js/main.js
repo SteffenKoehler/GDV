@@ -443,9 +443,7 @@ var rentApp = (function (window, document, $, L, undefined) {
     function addWohnheimMarker(marker) {
         //clear wohnheim marker to avoid continuous map adding
         if (wohnheimMarker.length > 0) {
-            for (var idx in wohnheimMarker) {
-                map.removeLayer(wohnheimMarker[idx]);
-            }
+            removeSetOfMarkers(wohnheimMarker);
         }
 
         var wonheimIcon = L.icon({
@@ -489,9 +487,7 @@ var rentApp = (function (window, document, $, L, undefined) {
     function addParkMarker(marker) {
         //clear park marker to avoid continuous map adding
         if (parkMarker.length > 0) {
-            for (var idx in parkMarker) {
-                map.removeLayer(parkMarker[idx]);
-            }
+            removeSetOfMarkers(parkMarker);
         }
 
         var parkIcon = L.icon({
@@ -535,9 +531,7 @@ var rentApp = (function (window, document, $, L, undefined) {
     function addHaltestellenMarker(marker) {
         //clear haltestellen marker to avoid continuous map adding
         if (haltestellenMarker.length > 0) {
-            for (var idx in haltestellenMarker) {
-                map.removeLayer(haltestellenMarker[idx]);
-            }
+            removeSetOfMarkers(haltestellenMarker);
         }
 
         var haltestelleIcon = L.icon({
