@@ -1,5 +1,5 @@
 // delay between geocode requests - at the time of writing, 100 miliseconds seems to work well
-var delay = 100000;
+var delay = 20000;
 var fehlgeschlagen = false;
 
 // ====== Geocoding ======
@@ -96,15 +96,13 @@ var nextAddress = 0;
 function theNext() {
     console.log("theNext");
     if (nextAddress < addresses.length) {
-        setTimeout(getAddress(addresses[nextAddress],theNext), delay);
+        setTimeout(function(){getAddress(addresses[nextAddress],theNext)}, 1000);
         nextAddress++;
         //console.log(nextAddress + " ",addresses[nextAddress]);
     } else {
 
     }
 }
-
-
 
 
 function initMap() {
