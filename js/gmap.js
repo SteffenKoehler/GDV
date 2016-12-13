@@ -24,15 +24,31 @@ function calcTime(wohnheim, hochschule, next) {
     }, function(response, status) {
         if (status === google.maps.DirectionsStatus.OK) {
             duration = response.routes[0].legs[0].duration.value /60;
-            document.getElementById('transit').innerHTML += wohnheim.Wohnheim + "," + hochschule.Hochschule + "," + duration.toFixed(0) + "," + "<br>";
+            document.getElementById('transit').innerHTML +=
+
+                "{" + "<br>" +
+                "\"Origin\": " + "\"" + wohnheim.Wohnheim + "\"" + "," + "<br>" +
+                "\"OriginAdress\": " + "\"" + wohnheim.Straße  + " " + wohnheim.PLZ + " " + wohnheim.Ort + "\"" + "," + "<br>" +
+                "\"OriginLat\": " + wohnheim.Latitude + "," + "<br>" +
+                "\"OriginLng\": " + wohnheim.Longitude + "," + "<br>" +
+                "\"Destination\": " + "\"" + hochschule.Hochschule + "\"" + "," + "<br>" +
+                "\"DestinationAdress\": " + "\"" + hochschule.Straße + " " + hochschule.PLZ + " " + hochschule.Ort + "\"" + "," + "<br>" +
+                "\"DestinationLat\": " + hochschule.Latitude + "," + "<br>" +
+                "\"DestinationLng\": " + hochschule.Longitude + "," + "<br>" +
+                "\"travelMode\": \"transit\"," + "<br>" +
+                "\"travelTime\": " + duration.toFixed(0) + "<br>" + "}," + "<br>";
+
+
+
+
             console.log("transit");
             fehlgeschlagen = false;
         } else {
             if (status == google.maps.GeocoderStatus.OVER_QUERY_LIMIT) {
                 console.log("OVER_QUERY_LIMIT");
-                if(!fehlgeschlagen){
+                //if(!fehlgeschlagen){
                     nextAddress--;
-                }
+                //}
                 fehlgeschlagen = true;
                 console.log(nextAddress + " ",addresses[nextAddress]);
                 //delay++;
@@ -78,7 +94,7 @@ function theNext() {
     console.log("theNext");
     if (nextAddress < (addresses.length-1)) {
         console.log("theNext " + nextAddress);
-        setTimeout(function(){calcTime(addresses[nextAddress],addressesTarget[nextHochsule],theNext)}, 1000);
+        setTimeout(function(){calcTime(addresses[nextAddress],addressesTarget[nextHochsule],theNext)}, 200);
         nextAddress++;
     }else{
         if(nextHochsule < (addressesTarget.length-1)){
