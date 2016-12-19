@@ -17,7 +17,8 @@
         "name": "Trudering-Riem",
         "bezirk": "Stadtbezirk 15 ",
         "bezirkId": "15",
-        "type": "boundary"
+        "type": "boundary",
+        "prize": "7,71"
       },
       "geometry": {
         "type": "Polygon",
@@ -1417,7 +1418,8 @@
         "bezirk": "Stadtbezirk 19 ",
         "bezirkId": "19",
         "note": "München, Stadtbezirk 19, 5 Bezirksteile",
-        "type": "boundary"
+        "type": "boundary",
+        "prize": "5,11"
       },
       "geometry": {
         "type": "Polygon",
@@ -2847,7 +2849,8 @@
         "bezirk": "Stadtbezirk 7",
         "bezirkId": "7",
         "note": "München, Stadtbezirk 7, 3 Bezirksteile",
-        "type": "boundary"
+        "type": "boundary",
+        "prize": "5,96"
       },
       "geometry": {
         "type": "Polygon",
@@ -3095,7 +3098,8 @@
         "bezirk": "Stadtbezirk 20",
         "bezirkId": "20",
         "note": "München, Stadtbezirk 20, Bezirksteil 3",
-        "type": "boundary"
+        "type": "boundary",
+        "prize": "6,05"
       },
       "geometry": {
         "type": "Polygon",
@@ -3749,7 +3753,8 @@
         "bezirk": "Stadtbezirk 21",
         "bezirkId": "21",
         "note": "München, Stadtbezirk 21, Bezirksteil 4",
-        "type": "boundary"
+        "type": "boundary",
+        "prize": "5,66"
       },
       "geometry": {
         "type": "Polygon",
@@ -4719,7 +4724,8 @@
         "bezirk": "Stadtbezirk 22",
         "bezirkId": "22",
         "note": "München, Stadtbezirk 22, 2 Bezirksteile",
-        "type": "boundary"
+        "type": "boundary",
+        "prize": "6,93"
       },
       "geometry": {
         "type": "Polygon",
@@ -6713,7 +6719,8 @@
         "bezirk": "Stadtbezirk 23",
         "bezirkId": "23",
         "note": "München, Stadtbezirk 23, 2 Bezirksteile",
-        "type": "boundary"
+        "type": "boundary",
+        "prize": "7,22"
       },
       "geometry": {
         "type": "Polygon",
@@ -7475,7 +7482,8 @@
         "bezirk": "Stadtbezirk 24",
         "bezirkId": "24",
         "note": "München, Stadtbezirk 24, 4 Bezirksteile",
-        "type": "boundary"
+        "type": "boundary",
+        "prize": "5,00"
       },
       "geometry": {
         "type": "Polygon",
@@ -8768,7 +8776,8 @@
         "bezirk": "Stadtbezirk 10",
         "bezirkId": "10",
         "note": "München, Stadtbezirk 10, 2 Bezirksteile",
-        "type": "boundary"
+        "type": "boundary",
+        "prize": "6,27"
       },
       "geometry": {
         "type": "Polygon",
@@ -9182,7 +9191,8 @@
         "bezirk": "Stadtbezirk 9",
         "bezirkId": "9",
         "note": "München, Stadtbezirk 9, 6 Bezirksteile",
-        "type": "boundary"
+        "type": "boundary",
+        "prize": "6,74"
       },
       "geometry": {
         "type": "Polygon",
@@ -9703,7 +9713,8 @@
         "bezirk": "Stadtbezirk 25",
         "bezirkId": "25",
         "note": "München, Stadtbezirk 25, 2 Bezirksteile",
-        "type": "boundary"
+        "type": "boundary",
+        "prize": "5,95"
       },
       "geometry": {
         "type": "Polygon",
@@ -9953,7 +9964,8 @@
         "bezirkId": "8",
         "note": "München, Stadtbezirk 8, 2 Bezirksteile",
         "type": "boundary",
-        "wikipedia:de": "Schwanthalerhöhe"
+        "wikipedia:de": "Schwanthalerhöhe",
+        "prize": "7,20"
       },
       "geometry": {
         "type": "Polygon",
@@ -10179,7 +10191,8 @@
         "bezirk": "Stadtbezirk 2",
         "bezirkId": "2",
         "note": "München, Stadtbezirk 2, 9 Bezirksteile",
-        "type": "boundary"
+        "type": "boundary",
+        "prize": "6,68"
       },
       "geometry": {
         "type": "Polygon",
@@ -10520,7 +10533,8 @@
         "bezirk": "Stadtbezirk 6",
         "bezirkId": "6",
         "note": "München, Stadtbezirk 6, 2 Bezirksteile",
-        "type": "boundary"
+        "type": "boundary",
+        "prize": "6,23"
       },
       "geometry": {
         "type": "Polygon",
@@ -10758,7 +10772,8 @@
         "bezirk": "Stadtbezirk 11",
         "bezirkId": "11",
         "note": "München, Stadtbezirk 11, 3 Bezirksteile",
-        "type": "boundary"
+        "type": "boundary",
+        "prize": "5,86"
       },
       "geometry": {
         "type": "Polygon",
@@ -11349,7 +11364,8 @@
         "note": "München, Stadtbezirk 3, 10 Bezirksteile",
         "type": "boundary",
         "wikidata": "Q256012",
-        "wikipedia": "de:Maxvorstadt"
+        "wikipedia": "de:Maxvorstadt",
+        "prize": "7,31"
       },
       "geometry": {
         "type": "Polygon",
@@ -11703,7 +11719,8 @@
         "bezirk": "Stadtbezirk 4",
         "bezirkId": "4",
         "note": "München, Stadtbezirk 4, 3 Bezirksteile",
-        "type": "boundary"
+        "type": "boundary",
+        "prize": "6,52"
       },
       "geometry": {
         "type": "Polygon",
@@ -11973,7 +11990,8 @@
         "bezirk": "Stadtbezirk 12",
         "bezirkId": "12",
         "note": "München, Stadtbezirk 12, 8 Bezirksteile",
-        "type": "boundary"
+        "type": "boundary",
+        "prize": "5,47"
       },
       "geometry": {
         "type": "Polygon",
@@ -13610,7 +13628,8 @@
         "bezirk": "Stadtbezirk 1",
         "bezirkId": "1",
         "note": "München, Stadtbezirk 1, 6 Bezirksteile",
-        "type": "boundary"
+        "type": "boundary",
+        "prize": "7,42"
       },
       "geometry": {
         "type": "Polygon",
@@ -13931,7 +13950,8 @@
         "bezirk": "Stadtbezirk 13",
         "bezirkId": "13",
         "note": "München, Stadtbezirk 13, 7 Bezirksteile",
-        "type": "boundary"
+        "type": "boundary",
+        "prize": "6,95"
       },
       "geometry": {
         "type": "Polygon",
@@ -14972,7 +14992,8 @@
         "bezirk": "Stadtbezirk 5",
         "bezirkId": "5",
         "note": "München, Stadtbezirk 5, 6 Bezirksteile",
-        "type": "boundary"
+        "type": "boundary",
+        "prize": "5,90"
       },
       "geometry": {
         "type": "Polygon",
@@ -15305,7 +15326,8 @@
         "bezirk": "Stadtbezirk 14",
         "bezirkId": "14",
         "note": "München, Stadtbezirk 14, 1 Bezirksteil",
-        "type": "boundary"
+        "type": "boundary",
+        "prize": "6,75"
       },
       "geometry": {
         "type": "Polygon",
@@ -15550,7 +15572,8 @@
         "bezirk": "Stadtbezirk 18",
         "bezirkId": "18",
         "note": "München, Stadtbezirk 18, 5 Bezirksteile",
-        "type": "boundary"
+        "type": "boundary",
+        "prize": "6,30"
       },
       "geometry": {
         "type": "MultiPolygon",
@@ -16210,7 +16233,8 @@
         "bezirk": "Stadtbezirk 16",
         "bezirkId": "16",
         "note": "München, Stadtbezirk 16, 5 Bezirksteile",
-        "type": "boundary"
+        "type": "boundary",
+        "prize": "6,40"
       },
       "geometry": {
         "type": "Polygon",
@@ -17028,7 +17052,8 @@
         "bezirk": "Stadtbezirk 17",
         "bezirkId": "17",
         "note": "München, Stadtbezirk 17, 2 Bezirksteile",
-        "type": "boundary"
+        "type": "boundary",
+        "prize": "6,41"
       },
       "geometry": {
         "type": "Polygon",
