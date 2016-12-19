@@ -47,9 +47,6 @@ var rentApp = (function (window, document, $, L, undefined) {
      *********************************/
 
     function initMap() {
-
-        ui.$sidebar.hide();
-
         map = new L.Map('map', {
             center: [48.157154, 11.546124],
             zoomControl: true,
@@ -60,12 +57,9 @@ var rentApp = (function (window, document, $, L, undefined) {
         });
 
 
-
-
-
         //loadAjax({url : 'data/labels.json', callback : addLabels});
         loadAjax({url: 'data/berlin-zipcodes-data.topojson', callback: addTopoJson});
-        loadAjax({url: 'data/hochschule.json', callback: addHochschuleMarker});
+        loadAjax({url: 'data/wohnheime.json', callback: addWohnheimMarker});
     }
 
     function getZoomByWindowSize() {
@@ -382,19 +376,36 @@ var rentApp = (function (window, document, $, L, undefined) {
      //
      *********************************/
 
+    ui.$checkboxHochschulen.change(function () {
+        if(this.checked){
+            loadAjax({url: 'data/hochschule.json', callback: addHochschuleMarker});
+        } else {
+            removeSetOfMarkers(hochschulMarker);
+        }
+    });
+
 
     function addHochschuleMarker(marker) {
+        //clear hochschul marker to avoid continuous map adding
+        if (hochschulMarker.length > 0) {
+            removeSetOfMarkers(hochschulMarker);
+        }
+
         marker.forEach(function (hochschule, i) {
             if (!hochschule) {
                 return;
             }
             var wohnheim = hochschule.Hochschule;
             var strasse = hochschule.Straße;
-            var marker = L.marker([hochschule.Latitude, hochschule.Longitude])
+            var marker = L.marker([hochschule.Latitude, hochschule.Longitude],
+                {
+                    bounceOnAdd: true,
+                    bounceOnAddOptions: {duration: 500, height: 100}
+                })
                 .bindPopup("<b>" + wohnheim + "</b><br>" + strasse)
-                .on({
+                /*.on({
                     'click': onHochschuleClick
-                });
+                })*/;
 
             marker.addTo(map);
 
@@ -403,9 +414,7 @@ var rentApp = (function (window, document, $, L, undefined) {
 
     }
 
-    function onHochschuleClick(markerClicked) {
-        ui.$sidebar.show();
-
+    /*function onHochschuleClick(markerClicked) {
         //Entfernen aller Marker die nicht dem geklilckten marker entsprechen
         for (var i = 0; i < hochschulMarker.length; i++) {
             if (hochschulMarker[i] != markerClicked.target) {
@@ -420,7 +429,7 @@ var rentApp = (function (window, document, $, L, undefined) {
             ui.$checkboxWohnheime.trigger('change');
         }, 300);
 
-    }
+    }*/
 
 
     /********************************
@@ -457,9 +466,7 @@ var rentApp = (function (window, document, $, L, undefined) {
             var strasse = label.Straße;
             var marker = L.marker([label.Latitude, label.Longitude],
                 {
-                    icon: wonheimIcon,
-                    bounceOnAdd: true,
-                    bounceOnAddOptions: {duration: 500, height: 100}
+                    icon: wonheimIcon
                 })
                 .bindPopup("<b>" + wohnheim + "</b><br>" + strasse);
             marker.addTo(map);
