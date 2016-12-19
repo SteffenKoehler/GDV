@@ -480,7 +480,7 @@ var rentApp = (function (window, document, $, L, undefined) {
         }
 
         var wonheimIcon = L.icon({
-            iconUrl: 'img/wohnheime.png',
+            iconUrl: 'img/wohnheimeG.png',
 
             iconSize: [50, 50], // size of the icon
             iconAnchor: [25,50], // point of the icon which will correspond to marker's location
