@@ -165,16 +165,15 @@ var rentApp = (function (window, document, $, L, undefined) {
 
     // redraws the map and updates salary values
     function updateMap() {
-
-        currentSalary = ~~ui.$slider.val();
-        ui.$salaryOutput.text(formatNumber(currentSalary));
+        /*currentSalary = ~~ui.$slider.val();
+        ui.$salaryOutput.text(formatNumber(currentSalary));*/
 
         topoLayer.eachLayer(function (layer) {
-
             var properties = layer.feature.properties,
                 //  rent = properties.randomRent * config.roomQms[currentRoomCount],
-                percentage = Math.random() * 100,
-                color = getColorByPercentage(percentage);
+                //percentage = Math.random() * 100,
+                //color = getColorByPercentage(percentage);
+                color = getColorByPrize(properties.prize);
 
             layer.setStyle({
                 'fillColor': color
@@ -352,7 +351,7 @@ var rentApp = (function (window, document, $, L, undefined) {
     }
 
     // returns a color for a certain percentage. change the color values in config.js
-    function getColorByPercentage(perc) {
+    /*function getColorByPercentage(perc) {
         var color = config.colors[0];
         if (perc > 66) {
             color = config.colors[4];
@@ -363,6 +362,23 @@ var rentApp = (function (window, document, $, L, undefined) {
         } else if (perc > 25) {
             color = config.colors[1];
         } else if (~~perc === 0) {
+            color = '#cccccc';
+        }
+
+        return color;
+    }*/
+
+    // returns a color for a certain prize. change the color values in config.js
+    function getColorByPrize(prize) {
+        prize = parseFloat(prize.replace(',','.').replace(' ',''));
+        var color = config.colors[0];
+        if (prize > 7) {
+            color = config.colors[3];
+        } else if (prize > 6) {
+            color = config.colors[2];
+        } else if (prize >= 5) {
+            color = config.colors[1];
+        } else if (~~prize === 0) {
             color = '#cccccc';
         }
 
