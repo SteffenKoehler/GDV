@@ -362,10 +362,21 @@ li.nodata {
     font-size: 12px;
     color: #777;
 }
-.tooltip-text {
+#tooltip .tooltip-text {
     margin-top: 10px;
     font-size: 12px;
     line-height: 19px;
+}
+
+#tooltip .tooltip-text .rent-price{
+    font-size: 16px;
+}
+
+#tooltip hr{
+    margin-top: 5px;
+    margin-left: -15px;
+    margin-right: -10px;
+    border: 1px solid lightgrey;
 }
 
 /*****************

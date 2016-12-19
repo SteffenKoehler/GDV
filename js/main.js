@@ -23,7 +23,7 @@ var rentApp = (function (window, document, $, L, undefined) {
             $tooltipheadline: $('#tooltip').find('.headline'),
             $tooltipqm: $('#tooltip').find('.qm'),
             $tooltipbezirk: $('#tooltip').find('.bezirk'),
-            $tooltipRentPrice: $('#tooltip').find('.rent-price'),
+            $tooltipPrice: $('#tooltip').find('.rent-price'),
 
 
             $sidebar: $('#sidebar'),
@@ -201,7 +201,7 @@ var rentApp = (function (window, document, $, L, undefined) {
         ui.$tooltipheadline.html('<strong>' + properties.name + ' </strong>');
         //ui.$tooltipqm.text(qms);
         ui.$tooltipbezirk.text(properties.bezirk);
-        //ui.$tooltipRentPrice.text(properties.randomRent);
+        ui.$tooltipPrice.text(properties.prize);
 
         ui.$tooltip.show();
         ui.$tooltip.css('border-left', ('4px solid ' + params.layer.options.fillColor));
