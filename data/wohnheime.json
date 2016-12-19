@@ -64,16 +64,7 @@
   },
   {
     "Wohnheim": "Agnes-/Adelheidstraße ",
-    "Straße": "Adelheidstraße 13",
-    "PLZ": 80798,
-    "Ort": "München",
-    "Latitude": 48.15729,
-    "Longitude": 11.567333,
-    "FIELD7": ""
-  },
-  {
-    "Wohnheim": "Agnes-/Adelheidstraße ",
-    "Straße": "Agnesstraße 27, 31-35",
+    "Straße": "Agnesstraße 13, 27, 31-35",
     "PLZ": 80798,
     "Ort": "München",
     "Latitude": 48.157652,
@@ -181,7 +172,7 @@
   },
   {
     "Wohnheim": "Heiglhofstraße ",
-    "Straße": "Heiglhofstraße 64, 65",
+    "Straße": "Heiglhofstraße 44, 46, 64, 65",
     "PLZ": 81377,
     "Ort": "München",
     "Latitude": 48.10728,
@@ -190,16 +181,7 @@
   },
   {
     "Wohnheim": "Notburga-/Volksgartenstraße",
-    "Straße": "Notburgastraße 19-21",
-    "PLZ": 80639,
-    "Ort": "München",
-    "Latitude": 48.15657,
-    "Longitude": 11.51182,
-    "FIELD7": ""
-  },
-  {
-    "Wohnheim": "Notburga-/Volksgartenstraße",
-    "Straße": "Volksgartenstraße 10",
+    "Straße": "Notburgastraße 19-21 / Volksgartenstraße 10",
     "PLZ": 80639,
     "Ort": "München",
     "Latitude": 48.15651,
@@ -213,15 +195,6 @@
     "Ort": "München",
     "Latitude": 48.110225,
     "Longitude": 11.476637,
-    "FIELD7": ""
-  },
-  {
-    "Wohnheim": "Sauerbruchstraße ",
-    "Straße": "Heiglhofstraße 44, 46",
-    "PLZ": 81377,
-    "Ort": "München",
-    "Latitude": 48.10982,
-    "Longitude": 11.477,
     "FIELD7": ""
   },
   {
