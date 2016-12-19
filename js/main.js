@@ -52,18 +52,16 @@ var rentApp = (function (window, document, $, L, undefined) {
 
         map = new L.Map('map', {
             center: [48.157154, 11.546124],
-            zoom: 12,
             zoomControl: true,
-            scrollWheelZoom: 'center'
+            scrollWheelZoom: 'center',
+            minZoom: 11,
+            maxZoom: 15,
+            zoom: 11
         });
 
-        map.options.maxZoom = 30;
-        map.options.minZoom = 12;
 
-        var osmUrl = 'http://{s}.tile.openstreetmap.de/tiles/osmde/{z}/{x}/{y}.png';
-        var osmAttrib = '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>';
-        var osm = new L.TileLayer(osmUrl, {attribution: osmAttrib});
-        map.addLayer(osm);
+
+
 
         //loadAjax({url : 'data/labels.json', callback : addLabels});
         loadAjax({url: 'data/berlin-zipcodes-data.topojson', callback: addTopoJson});
