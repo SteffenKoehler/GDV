@@ -56,6 +56,16 @@ var rentApp = (function (window, document, $, L, undefined) {
             zoom: 11
         });
 
+        var mapboxAccessToken = "pk.eyJ1Ijoic2tvZWhsZXI5MiIsImEiOiJjaXd3NzM5Y20wMWUxMnlscWIzc3o4bml1In0.rdWfyRstWCcMYuc8MLGitw";
+        var mapboxLightTheme = "https://api.mapbox.com/styles/v1/mapbox/light-v9/tiles/256/{z}/{x}/{y}?access_token=";
+        var mapboxDarkTheme = "https://api.mapbox.com/styles/v1/mapbox/dark-v9/tiles/256/{z}/{x}/{y}?access_token=";
+        var mapboxAttribution = "<a href='https://www.mapbox.com/' target='_blank'>Mapbox</a>";
+
+        L.tileLayer(mapboxDarkTheme + mapboxAccessToken, {
+            id: 'mapbox.light',
+            attribution: mapboxAttribution
+        }).addTo(map);
+
 
         //loadAjax({url : 'data/labels.json', callback : addLabels});
         loadAjax({url: 'data/berlin-zipcodes-data.topojson', callback: addTopoJson});
