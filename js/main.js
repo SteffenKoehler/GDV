@@ -488,13 +488,34 @@ var rentApp = (function (window, document, $, L, undefined) {
         });
 
         marker.forEach(function (label, i) {
-            var wohnheim = label.Wohnheim;
+            var wohnheim = label.Name;
             var strasse = label.Straße;
+            var minMiete = label.MieteMinimal + "€";
+            var maxMiete = label.MieteMaximal + "€";
+
+            var popupDetails =
+                "<table>" +
+                    "<tr>" +
+                        "<td style='padding: 1px;'>" + "Straße: " + "</td>" +
+                        "<td style='padding: 1px;'>" + strasse + "</td>" +
+                    "</tr>" +
+
+                    "<tr>" +
+                        "<td style='padding: 1px;'>" + "Miete minimal: " + "</td>" +
+                        "<td style='padding: 1px;'>" + minMiete + "</td>" +
+                    "</tr>" +
+
+                    "<tr>" +
+                        "<td style='padding: 1px;'>" + "Miete maximal: " + "</td>" +
+                        "<td style='padding: 1px;'>" + maxMiete + "</td>" +
+                    "</tr>" +
+                "</table>";
+
             var marker = L.marker([label.Latitude, label.Longitude],
                 {
                     icon: wonheimIcon
                 })
-                .bindPopup("<b>" + wohnheim + "</b><br>" + strasse);
+                .bindPopup("<b>" + wohnheim + "</b><br>" + popupDetails);
             marker.addTo(map);
 
             wohnheimMarker.push(marker);
