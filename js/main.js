@@ -485,12 +485,19 @@ var rentApp = (function (window, document, $, L, undefined) {
             removeSetOfMarkers(wohnheimMarker);
         }
 
-        var wonheimIcon = L.icon({
+        /*var wonheimIcon = L.icon({
             iconUrl: 'img/wohnheimeB.png',
 
             iconSize: [50, 50], // size of the icon
             iconAnchor: [25,50], // point of the icon which will correspond to marker's location
             popupAnchor: [0, -50] // point from which the popup should open relative to the iconAnchor
+        });*/
+
+        var colorWohnheimIcon = 'circle-blue';
+
+        var wonheimIcon = L.divIcon({
+            className : 'circle ' + colorWohnheimIcon,
+            iconSize : [ 15, 15 ]
         });
 
         marker.forEach(function (label, i) {
