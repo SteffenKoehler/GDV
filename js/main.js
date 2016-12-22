@@ -479,6 +479,28 @@ var rentApp = (function (window, document, $, L, undefined) {
         }
     });
 
+    function getWohnheimIconColor(minMiete) {
+        minMiete = parseFloat(minMiete.replace(',','.').replace(' ',''));
+
+        var color = '';
+
+        //color 1 = hell ... color 5 = dunkel
+
+        if (minMiete < 235){
+            color = 'circle-color-1'
+        } else if (minMiete < 258){
+            color = 'circle-color-2'
+        } else if (minMiete < 275){
+            color = 'circle-color-3'
+        } else if (minMiete < 300) {
+            color = 'circle-color-4'
+        } else {
+            color = 'circle-color-5'
+        }
+
+        return color;
+    }
+
     function addWohnheimMarker(marker) {
         //clear wohnheim marker to avoid continuous map adding
         if (wohnheimMarker.length > 0) {
@@ -493,18 +515,21 @@ var rentApp = (function (window, document, $, L, undefined) {
             popupAnchor: [0, -50] // point from which the popup should open relative to the iconAnchor
         });*/
 
-        var colorWohnheimIcon = 'circle-blue';
 
-        var wonheimIcon = L.divIcon({
-            className : 'circle ' + colorWohnheimIcon,
-            iconSize : [ 15, 15 ]
-        });
 
         marker.forEach(function (label, i) {
             var wohnheim = label.Name;
             var strasse = label.Straße;
             var minMiete = label.MieteMinimal + "€";
             var maxMiete = label.MieteMaximal + "€";
+
+            var colorWohnheimIcon = getWohnheimIconColor(minMiete);
+
+            var wonheimIcon = L.divIcon({
+                className : 'circle ' + colorWohnheimIcon,
+                iconSize : [ 15, 15 ]
+            });
+
 
             var popupDetails =
                 "<table>" +
