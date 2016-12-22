@@ -561,6 +561,22 @@ li.nodata {
     height:5px;
 }
 
-.circle-blue{
-    background-color: deepskyblue;
+.circle-color-1{
+    background-color: #f1eef6;
+}
+
+.circle-color-2{
+    background-color: #bdc9e1;
+}
+
+.circle-color-3{
+    background-color: #74a9cf;
+}
+
+.circle-color-4{
+    background-color: #2b8cbe;
+}
+
+.circle-color-5{
+    background-color: #045a8d;
 }

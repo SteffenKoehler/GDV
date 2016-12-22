@@ -58,7 +58,7 @@ var rentApp = (function (window, document, $, L, undefined) {
 
         var mapboxAccessToken = "pk.eyJ1Ijoic2tvZWhsZXI5MiIsImEiOiJjaXd3NzM5Y20wMWUxMnlscWIzc3o4bml1In0.rdWfyRstWCcMYuc8MLGitw";
         var mapboxLightTheme = "https://api.mapbox.com/styles/v1/mapbox/light-v9/tiles/256/{z}/{x}/{y}?access_token=";
-        var mapboxDarkTheme = "https://api.mapbox.com/styles/v1/mapbox/dark-v9/tiles/256/{z}/{x}/{y}?access_token=";
+        var mapboxDarkTheme = "https://api.mapbox.com/styles/v1/skoehler92/cix05vhuj000o2qo9h0vpedgc/tiles/256/{z}/{x}/{y}?access_token=";
         var mapboxAttribution = "<a href='https://www.mapbox.com/' target='_blank'>Mapbox</a>";
 
         L.tileLayer(mapboxDarkTheme + mapboxAccessToken, {
@@ -479,6 +479,28 @@ var rentApp = (function (window, document, $, L, undefined) {
         }
     });
 
+    function getWohnheimIconColor(minMiete) {
+        minMiete = parseFloat(minMiete.replace(',','.').replace(' ',''));
+
+        var color = '';
+
+        //color 1 = hell ... color 5 = dunkel
+
+        if (minMiete < 235){
+            color = 'circle-color-1'
+        } else if (minMiete < 258){
+            color = 'circle-color-2'
+        } else if (minMiete < 275){
+            color = 'circle-color-3'
+        } else if (minMiete < 300) {
+            color = 'circle-color-4'
+        } else {
+            color = 'circle-color-5'
+        }
+
+        return color;
+    }
+
     function addWohnheimMarker(marker) {
         //clear wohnheim marker to avoid continuous map adding
         if (wohnheimMarker.length > 0) {
@@ -493,12 +515,7 @@ var rentApp = (function (window, document, $, L, undefined) {
             popupAnchor: [0, -50] // point from which the popup should open relative to the iconAnchor
         });*/
 
-        var colorWohnheimIcon = 'circle-blue';
 
-        var wonheimIcon = L.divIcon({
-            className : 'circle ' + colorWohnheimIcon,
-            iconSize : [ 15, 15 ]
-        });
 
         marker.forEach(function (label, i) {
             var wohnheim = label.Name;
@@ -509,6 +526,14 @@ var rentApp = (function (window, document, $, L, undefined) {
 
             var mieteMin = parseInt(label.MieteMinimal) - 179;
           var mieteMax = parseInt(label.MieteMaximal) - 224;
+
+            var colorWohnheimIcon = getWohnheimIconColor(minMiete);
+
+            var wonheimIcon = L.divIcon({
+                className : 'circle ' + colorWohnheimIcon,
+                iconSize : [ 15, 15 ]
+            });
+
 
             var popupDetails =
                 "<table>" +
