@@ -5,7 +5,7 @@ var config = {
   maxSalary: 5000,
   startSalary: 1650,
   startRoom: 2,
-  colors: ['#d9ef8b', '#ffeaad', '#fdae61', '#d73027', '#a50026'],
+  colors: ['#fef0d9', '#fdcc8a', '#fc8d59', '#e34a33', '#b30000'],
   roomQms: {
     1: 40,
     2: 72,
