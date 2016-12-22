@@ -58,7 +58,7 @@ var rentApp = (function (window, document, $, L, undefined) {
 
         var mapboxAccessToken = "pk.eyJ1Ijoic2tvZWhsZXI5MiIsImEiOiJjaXd3NzM5Y20wMWUxMnlscWIzc3o4bml1In0.rdWfyRstWCcMYuc8MLGitw";
         var mapboxLightTheme = "https://api.mapbox.com/styles/v1/mapbox/light-v9/tiles/256/{z}/{x}/{y}?access_token=";
-        var mapboxDarkTheme = "https://api.mapbox.com/styles/v1/mapbox/dark-v9/tiles/256/{z}/{x}/{y}?access_token=";
+        var mapboxDarkTheme = "https://api.mapbox.com/styles/v1/skoehler92/cix05vhuj000o2qo9h0vpedgc/tiles/256/{z}/{x}/{y}?access_token=";
         var mapboxAttribution = "<a href='https://www.mapbox.com/' target='_blank'>Mapbox</a>";
 
         L.tileLayer(mapboxDarkTheme + mapboxAccessToken, {
