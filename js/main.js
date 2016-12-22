@@ -505,6 +505,10 @@ var rentApp = (function (window, document, $, L, undefined) {
             var strasse = label.Straße;
             var minMiete = label.MieteMinimal + "€";
             var maxMiete = label.MieteMaximal + "€";
+            var warteZeit = label.DurchschnittlicheWartezeit + " Semester";
+
+            var mieteMin = parseInt(label.MieteMinimal) - 179;
+          var mieteMax = parseInt(label.MieteMaximal) - 224;
 
             var popupDetails =
                 "<table>" +
@@ -513,13 +517,21 @@ var rentApp = (function (window, document, $, L, undefined) {
                         "<td style='padding: 1px;'>" + strasse + "</td>" +
                     "</tr>" +
 
+                "<tr>" +
+                "<td style='padding: 1px;'>" + "Wartezeit: " + "</td>" +
+                "<td style='padding: 1px;'>Ø " + warteZeit + "</td>" +
+                "</tr>" +
+
                     "<tr>" +
                         "<td style='padding: 1px;'>" + "Miete minimal: " + "</td>" +
+                        "<td style='padding: 1px;'>" +"<progress value='" + mieteMin + "' max='172'></progress>"+ "</td>" +
                         "<td style='padding: 1px;'>" + minMiete + "</td>" +
+
                     "</tr>" +
 
                     "<tr>" +
                         "<td style='padding: 1px;'>" + "Miete maximal: " + "</td>" +
+                        "<td style='padding: 1px;'>" +"<progress value='" + mieteMax + "' max='510'></progress>"+ "</td>" +
                         "<td style='padding: 1px;'>" + maxMiete + "</td>" +
                     "</tr>" +
                 "</table>";
