@@ -382,18 +382,24 @@ var rentApp = (function (window, document, $, L, undefined) {
     function getColorByPrize(prize) {
         prize = parseFloat(prize.replace(',','.').replace(' ',''));
         var color = config.colors[0];
-        if (prize > 7) {
+        if (prize > 23) {
+            color = config.colors[4];
+        } else if (prize > 20) {
             color = config.colors[3];
-        } else if (prize > 6) {
+        } else if (prize >= 17) {
             color = config.colors[2];
-        } else if (prize >= 5) {
-            color = config.colors[1];
+        } else if (prize >= 14) {
+          color = config.colors[1];
+        } else if (prize >= 11) {
+          color = config.colors[0];
         } else if (~~prize === 0) {
             color = '#cccccc';
         }
 
         return color;
     }
+
+
 
 
     /********************************
