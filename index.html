@@ -16,14 +16,14 @@
 	<link rel="stylesheet" type="text/css" href="bower_components/leaflet/dist/leaflet.css" />
 	<link rel="stylesheet" type="text/css" href="bower_components/nouislider/jquery.nouislider.css" />
 	<link rel="stylesheet" type="text/css" href="css/style.css" />
+    <link rel="stylesheet" type="text/css" href="css/animated.css" />
 
 </head>
 <body>
 
-	<div class="header group">
+	<!--<div class="header group">
         <h1>Münchener Mieten für Studenten</h1>
-	</div>
-
+	</div>-->
     <!-- we display this message on older browsers < IE9 -->
     <div class="browserMessage">
         <strong>Ihr Browser kann die interaktive Karte nicht darstellen.</strong><br/><br/>
@@ -64,13 +64,13 @@
                 <input id="checkWohnheime" type="checkbox"> <span class="light">Wohnheime</span>
             </div>-->
 
-            <div class="checkbox">
+            <!--<div class="checkbox">
                 <input id="checkParks" type="checkbox"> <span class="light">Parks</span>
             </div>
 
             <div class="checkbox">
                 <input id="checkHaltestellen" type="checkbox"> <span class="light">Haltestellen</span>
-            </div>
+            </div>-->
 
 			<!--<div id="slider">
 				<div class="slider-values max hide-on-mobile">- 5.000 Euro</div>
@@ -99,14 +99,83 @@
     			</ul>
 		</div>-->
 
-    	<!--<div class="info box">
+    	<div class="info box">
             <div class="close">&times;</div>
-            <h2>Info Text Titel</h2>
-            <h3>Achtung: Diese Anwendung zeigt Zufallswerte.</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rerum voluptas omnis temporibus totam asperiores tempora voluptates enim tenetur eos dignissimos quam hic ea nisi, neque sed minima harum ipsum veritatis?</p>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rerum voluptas omnis temporibus totam asperiores tempora voluptates enim tenetur eos dignissimos quam hic ea nisi, neque sed minima harum ipsum veritatis? Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rerum voluptas omnis temporibus totam asperiores tempora voluptates enim tenetur eos dignissimos quam hic ea nisi, neque sed minima harum ipsum veritatis? Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rerum voluptas omnis temporibus totam asperiores tempora voluptates enim tenetur eos dignissimos quam hic ea nisi, neque sed minima harum ipsum veritatis?</p>
+            <h2>Studenten - Wie in München wohnen?</h2>
+            <p>München ist bekanntlich die teuerste Stadt Deutschlands was das Wohnen angeht. Gleichzeitig ist München eine Großstadt mit vielen Universitäten und Hochschulen. Wie kann man es sich also als Student leisten in einer solch teuren Stadt zu wohnen? </p>
+            <p>Das Studentenwerk München bietet hierfür in München verteilt Zimmer in verschiedenen Wohnheimen an. Doch wo liegen diese Wohnheime? Und lohnt es sich überhaupt wirklich dort zu wohnen? Und in auf was für Gegenden muss man sich einlassen, um ein Schnäppchen zu machen?</p>
+            <p>All diese Fragen haben wir mit Hilfe öffentlich zugänglicher Daten beantwortet.</p>
+        </div>
+    </div>
 
-        </div>  -->
+
+    <div class="content">
+        <h1>Münchener Mieten für Studenten</h1>
+
+
+        <div class="ideen">
+            <h2>UNSERE FRAGEN UND IDEEN</h2>
+
+            <ul>
+                <li>Was kostet es in einem Studentenwohnheim zu wohnen?</li>
+                <li>Sind zentrumsnahe Wohnheime teurer als zentrumsferne?</li>
+                <li>Wie teuer sind die Wohngegenden in denen die Wohnheime liegen?</li>
+                <li>Wie lange dauert es bis ich überhaupt einen Wohnheimplatz bekomme?</li>
+                <li>Wie lange brauche ich von meinem Wohnheim zur Universität?</li>
+            </ul>
+        </div>
+
+        <div class="erkentniss">
+            <h2>UNSERE ERKENTNISSE</h2>
+
+            <ul>
+                <li>Ein Wohnheimplatz lohnt sich finanziell immer, wenn man denn einen bekommt. Wartezeiten von über drei Semestern sind nicht unüblich.</li>
+                <li>Die Wohnheime liegen zentral und in teuren Gegenden. Hier kann man vermuten, dass es die Wohnheime schon länger gibt als die teuren Mieten. Es zieht immer mehr Menschen in die Innenstädte, wodurch der umliegende Wohnraum aufgewertet wird.</li>
+                <li>Es  gibt auch Wohnheime, die weiter weg liegen. Diese sind deswegen allerdings nicht zwingend günstiger.</li>
+            </ul>
+        </div>
+
+        <div style="clear: both;"></div>
+
+
+        <div class="entstehung">
+            <h1>Die Entstehung</h1>
+        </div>
+
+        <section id="cd-timeline" class="cd-container">
+            <div class="cd-timeline-block">
+                <div class="cd-timeline-img cd-picture">
+                    <img src="img/cd-icon-picture.svg" alt="Picture">
+                </div> <!-- cd-timeline-img -->
+
+                <div class="cd-timeline-content">
+                    <h2>Inspiration</h2>
+                    <img src="img/inspiration.png" style="width: 500px">
+                </div> <!-- cd-timeline-content -->
+            </div> <!-- cd-timeline-block -->
+
+            <div class="cd-timeline-block">
+                <div class="cd-timeline-img cd-picture">
+                    <img src="img/cd-icon-picture.svg" alt="Picture">
+                </div> <!-- cd-timeline-img -->
+
+                <div class="cd-timeline-content">
+                    <h2>Datensammlung</h2>
+                    <img src="img/datensammlung.png" style="width: 500px">
+                </div> <!-- cd-timeline-content -->
+            </div> <!-- cd-timeline-block -->
+
+            <div class="cd-timeline-block">
+                <div class="cd-timeline-img cd-picture">
+                    <img src="img/cd-icon-picture.svg" alt="Picture">
+                </div> <!-- cd-timeline-img -->
+
+                <div class="cd-timeline-content">
+                    <h2>Prototypen</h2>
+                    <img src="img/prototypen.png" style="width: 500px">
+                </div> <!-- cd-timeline-content -->
+            </div> <!-- cd-timeline-block -->
+        </section> <!-- cd-timeline -->
     </div>
     <script src="bower_components/jquery/dist/jquery.min.js"></script>
     <script src="bower_components/nouislider/jquery.nouislider.js"></script>
@@ -117,5 +186,7 @@
     <script src="js/bouncemarker.js"></script>
     <script src="js/config.js"></script>
 	<script src="js/main.js"></script>
+    <script src="js/modernizr.js"></script>
+    <script src="js/animated.js"></script>
 </body>
 </html>

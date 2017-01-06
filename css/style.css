@@ -66,6 +66,7 @@ a:hover {
 html, body {
     width: 100%;
     height: 100%;
+    background-color: #343332;
 }
 html {
     font-family: Georgia, serif;
@@ -105,6 +106,7 @@ ul {
     height: 80%;
     overflow: hidden;
     font-family: Arial, sans-serif;
+    border-bottom: 2px solid #ffffff;
 }
 .light {
     color: #777;
@@ -579,4 +581,49 @@ li.nodata {
 
 .circle-color-5{
     background-color: #045a8d;
+}
+
+.content{
+    padding-top: 20px;background-color: #343332;
+    color: #ffffff;
+}
+
+.content h1{
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.ideen {
+    width: 50%;
+    padding-left: 18%;
+    float: left;
+}
+
+.ideen ul{
+    margin-top: 15px;
+    list-style-type: disc;
+}
+
+.ideen ul li{
+    margin-left: 20px;
+}
+
+.erkentniss {
+    width: 50%;
+    padding-right: 12%;
+    float: left;
+    padding-left: 4%;
+}
+
+.erkentniss ul{
+    margin-top: 15px;
+    list-style-type: disc;
+}
+
+.erkentniss ul li{
+    margin-left: 20px;
+}
+
+.entstehung {
+    margin-top: 100px;
 }

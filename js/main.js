@@ -290,7 +290,7 @@ var rentApp = (function (window, document, $, L, undefined) {
     function resize() {
         var appHeight = window.innerHeight - $('.header').outerHeight();
         $('.sidebar').css('max-height', (appHeight - 20) + 'px');
-        $('.app').css('height', appHeight + 'px');
+        //$('.app').css('height', appHeight + 'px');
         $('.info').css('max-height', (appHeight - 40) + 'px');
 
         map.invalidateSize();
