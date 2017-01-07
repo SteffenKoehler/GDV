@@ -593,6 +593,10 @@ li.nodata {
     margin-bottom: 50px;
 }
 
+.content hr{
+    margin-bottom: 10px;
+}
+
 .ideen {
     width: 50%;
     padding-left: 18%;
@@ -626,4 +630,27 @@ li.nodata {
 
 .entstehung {
     margin-top: 100px;
+}
+
+.aussichten{
+
+}
+
+.aussichten h1{
+    margin-bottom: 0;
+}
+
+.aussichten .aussicht{
+    width: 60%;
+    margin-left: 20%;
+    padding-top: 40px;
+    clear: both;
+}
+
+.aussichten .aussicht h2{
+    margin-bottom: 20px;
+}
+
+.aussichten .aussicht img{
+    width: 600px;
 }
