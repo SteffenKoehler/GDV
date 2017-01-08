@@ -17,6 +17,7 @@
 	<link rel="stylesheet" type="text/css" href="bower_components/nouislider/jquery.nouislider.css" />
 	<link rel="stylesheet" type="text/css" href="css/style.css" />
     <link rel="stylesheet" type="text/css" href="css/animated.css" />
+    <link href="bower_components/lightbox2/dist/css/lightbox.min.css" rel="stylesheet">
 
 </head>
 <body>
@@ -189,8 +190,10 @@
             <div class="aussicht">
                 <h2>Hochschulen und Universitäten in der Nähe</h2>
 
-                
-                <img src="img/aussichten/range.png" style="float: left; margin-right: 15px">
+                <a href="img/aussichten/range.png" data-lightbox="image-1">
+                    <img src="img/aussichten/range.png" style="float: left; margin-right: 15px">
+                </a>
+
                 <p>Nachdem das gewünschte Wohnheim ausgewählt wurde, besteht die Möglichkeit sich Hochschulen und Universitäten anzeigen zu lassen. Die Einschränkung geschieht hierbei über einen Slieder</p>
                 <br>
                 <p>Die Entfernungsangabe wird über Minuten geregelt. Dabei wird Rücksicht auf die Wegstrecke zu Fuß, mit dem Fahrrad und mit der Bahn genommen.</p>
@@ -198,10 +201,25 @@
 
 
             <div class="aussicht">
+                <h2>Was kostet mein gewünschtes Wohnheim im Vergleich</h2>
+
+                <a href="img/aussichten/diagramm.png" data-lightbox="image-2">
+                    <img src="img/aussichten/diagramm.png" style="float: right; margin-left: 15px">
+                </a>
+
+                <p>Für die Studenten spielt Geld oft eine Maßgebliche Rolle in der Wahl des richtigen Wohnheimes.</p>
+                <p>Klickt der Studierende auf ein für sich favorisiertes Wohnheim, bekommt er eine Übersicht in welchem Preisbereich es sich im Vergleich zu den anderen Wohnheimen bewegt.</p>
+            </div>
+
+
+
+            <div class="aussicht">
                 <h2>Beispiel für eine Weitere Aussicht - Dient aktuell nur als Template</h2>
 
+                <a href="img/aussichten/range.png" data-lightbox="image-3">
+                    <img src="img/aussichten/range.png" style="float: left; margin-right: 15px">
+                </a>
 
-                <img src="img/aussichten/range.png" style="float: right; margin-left: 15px">
                 <p>Nachdem das gewünschte Wohnheim ausgewählt wurde, besteht die Möglichkeit sich Hochschulen und Universitäten anzeigen zu lassen. Die Einschränkung geschieht hierbei über einen Slieder</p>
                 <br>
                 <p>Die Entfernungsangabe wird über Minuten geregelt. Dabei wird Rücksicht auf die Wegstrecke zu Fuß, mit dem Fahrrad und mit der Bahn genommen.</p>
@@ -220,5 +238,6 @@
 	<script src="js/main.js"></script>
     <script src="js/modernizr.js"></script>
     <script src="js/animated.js"></script>
+    <script src="bower_components/lightbox2/dist/js/lightbox.min.js"></script>
 </body>
 </html>
