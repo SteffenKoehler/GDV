@@ -125,6 +125,10 @@ ul {
     z-index: 99;
     width: 195px;
 }
+
+h1, h2, h3 {
+    font-family: Arial;
+}
 /*****************
 
  Map
@@ -637,13 +641,13 @@ li.nodata {
 }
 
 .aussichten h1{
-    margin-bottom: 0;
+    margin-bottom: -40px;
 }
 
 .aussichten .aussicht{
     width: 60%;
     margin-left: 20%;
-    padding-top: 40px;
+    padding-top: 100px;
     clear: both;
 }
 
