@@ -30,7 +30,7 @@ var rentApp = (function (window, document, $, L, undefined) {
             $checkboxHochschulen: $('#checkHochschulen'),
             $checkboxWohnheime: $('#checkWohnheime'),
             $checkboxParks: $('#checkParks'),
-            $checkboxHaltestellen: $('#checkHaltestellen'),
+            $checkboxHaltestellen: $('#checkHaltestellen')
 
         },
         hashValues = getHashValues(),
@@ -66,11 +66,26 @@ var rentApp = (function (window, document, $, L, undefined) {
             attribution: mapboxAttribution
         }).addTo(map);
 
+        map.on('click', function() {
+            map.scrollWheelZoom.enable();
+
+        });
 
         //loadAjax({url : 'data/labels.json', callback : addLabels});
         loadAjax({url: 'data/berlin-zipcodes-data.topojson', callback: addTopoJson});
         loadAjax({url: 'data/wohnheime.json', callback: addWohnheimMarker});
     }
+
+    $(document).ready(function(){
+        map.scrollWheelZoom.disable();
+        $(window).scroll(function(){
+            if(map){
+                map.scrollWheelZoom.disable();
+                map.setView(
+                    {lat: 48.157154, lng:11.546124}, 2);
+            }
+        })
+    });
 
     function getZoomByWindowSize() {
         var mapZoom = 11,
