@@ -13,3 +13,9 @@ var config = {
     4: 120
   }
 };
+
+
+lightbox.option({
+  'albumLabel': 'Bild %1 von %2',
+  'wrapAround': true
+});
