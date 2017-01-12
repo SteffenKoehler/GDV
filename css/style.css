@@ -158,10 +158,10 @@ h1, h2, h3 {
 
 .legend {
     bottom: 5%;
-    left: 50%;
+    left: 15%;
     margin-left: -275px;
     position: absolute;
-    background: rgba(255, 255, 255, 0.9);
+    background: rgba(255, 255, 255, 0.6);
     overflow-y: auto;
     padding: 15px;
     z-index: 99;
@@ -179,6 +179,15 @@ h1, h2, h3 {
     width: 20px;
     border-radius: 1px;
 }
+
+.legend li .dot {
+    display: inline-block;
+    margin-right: 5px;
+    height: 20px;
+    width: 20px;
+    border-radius: 20px;
+}
+
 .legend li .legend-label {
     vertical-align: top;
     line-height: 18px;
@@ -190,19 +199,19 @@ h1, h2, h3 {
     background: #d9ef8b;
 }
 .legend .color-1 {
-    background: #ffeaad;
+    background: #fef0d9;
 }
 .legend .color-2 {
-    background: #fdae61;
+    background: #fdcc8a;
 }
 .legend .color-3 {
-    background: #d73027;
+    background: #fc8d59;
 }
 .legend .color-4 {
-    background: #a50026;
+    background: #e34a33;
 }
 .legend .color-5 {
-    background: #ccc;
+    background: #b30000;
 }
 #plus {
     display: none;
