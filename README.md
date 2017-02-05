@@ -1,8 +1,5 @@
 # GDV
 
-# Installation
-1. Download node.js `https://nodejs.org` 
-2. Install bower: `npm install -g bower`   
-3. Run bower install: `bower install`
-4. Run server `python -m SimpleHTTPServer 1337` 
+Dieses Projekt wurde im Laufe eines Semesters an der Hochschule Mannheim entwickelt. Dabei handelt es sich um einen Prototypen zur Visualisierung von Mietdaten, Studentenwohnheimen und Universitäten/Hochschulen der Stadt München. Interessierte Studierende können sich hiermit einen Überblick über die Preise verschaffen. 
 
+Die Basis für den eingesetzten Code stammt von der Mietkarte der Berliner Morgenpost https://github.com/berlinermorgenpost/mietkarte
